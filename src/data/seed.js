@@ -1,0 +1,197 @@
+export const bays = [
+  {
+    id: 'bay-1',
+    name: 'Bay 1',
+    type: 'general',
+  },
+  {
+    id: 'bay-2',
+    name: 'Bay 2',
+    type: 'general',
+  },
+  {
+    id: 'bay-3',
+    name: 'Bay 3',
+    type: 'general',
+  },
+  {
+    id: 'bay-4',
+    name: 'Lift Bay 1',
+    type: 'lift',
+  },
+  {
+    id: 'bay-5',
+    name: 'Lift Bay 2',
+    type: 'lift',
+  },
+  {
+    id: 'bay-6',
+    name: 'Alignment Rack',
+    type: 'alignment',
+  },
+]
+
+export const technicians = [
+  {
+    id: 'tech-1',
+    name: 'Maya Chen',
+    skills: ['general', 'brakes'],
+    shiftStart: 8,
+    shiftEnd: 17,
+  },
+  {
+    id: 'tech-2',
+    name: 'Luis Ortega',
+    skills: ['general', 'brakes', 'suspension'],
+    shiftStart: 8,
+    shiftEnd: 17,
+  },
+  {
+    id: 'tech-3',
+    name: 'Priya Shah',
+    skills: ['general', 'alignment', 'suspension'],
+    shiftStart: 8,
+    shiftEnd: 17,
+  },
+  {
+    id: 'tech-4',
+    name: 'Andre Walker',
+    skills: ['general', 'diagnostics', 'timing-belt'],
+    shiftStart: 8,
+    shiftEnd: 15,
+  },
+  {
+    id: 'tech-5',
+    name: 'Sam Rivera',
+    skills: ['general', 'maintenance'],
+    shiftStart: 9,
+    shiftEnd: 17,
+  },
+]
+
+export const jobs = [
+  {
+    id: 'job-1',
+    type: 'Oil Change',
+    durationMin: 30,
+    requiredSkill: 'maintenance',
+    requiredBayType: 'general',
+    dueBy: 10,
+  },
+  {
+    id: 'job-2',
+    type: 'Brake Pads',
+    durationMin: 90,
+    requiredSkill: 'brakes',
+    requiredBayType: 'lift',
+    dueBy: 12,
+  },
+  {
+    id: 'job-3',
+    type: 'Tire Rotation',
+    durationMin: 30,
+    requiredSkill: 'general',
+    requiredBayType: 'lift',
+    dueBy: 11,
+  },
+  {
+    id: 'job-4',
+    type: 'Multi-Point Inspection',
+    durationMin: 60,
+    requiredSkill: 'general',
+    requiredBayType: 'general',
+    dueBy: 12,
+  },
+  {
+    id: 'job-5',
+    type: 'Battery Replacement',
+    durationMin: 30,
+    requiredSkill: 'general',
+    requiredBayType: 'general',
+    dueBy: 11.5,
+  },
+  {
+    id: 'job-6',
+    type: 'Coolant Service',
+    durationMin: 60,
+    requiredSkill: 'maintenance',
+    requiredBayType: 'general',
+    dueBy: 13,
+  },
+  {
+    id: 'job-7',
+    type: 'Suspension Noise',
+    durationMin: 90,
+    requiredSkill: 'suspension',
+    requiredBayType: 'lift',
+    dueBy: 14,
+  },
+  {
+    id: 'job-8',
+    type: 'Express Oil Change',
+    durationMin: 30,
+    requiredSkill: 'maintenance',
+    requiredBayType: 'general',
+    dueBy: 13.5,
+  },
+  {
+    id: 'job-9',
+    type: 'Four-Wheel Alignment',
+    durationMin: 90,
+    requiredSkill: 'alignment',
+    requiredBayType: 'alignment',
+    dueBy: 14,
+  },
+  {
+    id: 'job-10',
+    type: 'Check Engine Diagnosis',
+    durationMin: 120,
+    requiredSkill: 'diagnostics',
+    requiredBayType: 'general',
+    dueBy: 13,
+  },
+  {
+    id: 'job-11',
+    type: 'Timing Belt',
+    durationMin: 180,
+    requiredSkill: 'timing-belt',
+    requiredBayType: 'lift',
+    dueBy: 15,
+  },
+  {
+    id: 'job-12',
+    type: 'Recall Inspection',
+    durationMin: 60,
+    requiredSkill: 'general',
+    requiredBayType: 'general',
+    dueBy: 16,
+  },
+  {
+    id: 'job-13',
+    type: 'Brake Fluid Flush',
+    durationMin: 60,
+    requiredSkill: 'brakes',
+    requiredBayType: 'lift',
+    dueBy: 16,
+  },
+  {
+    id: 'job-14',
+    type: 'Alignment Recheck',
+    durationMin: 60,
+    requiredSkill: 'alignment',
+    requiredBayType: 'alignment',
+    dueBy: 16,
+  },
+  {
+    id: 'job-15',
+    type: 'Drivability Diagnosis',
+    durationMin: 120,
+    requiredSkill: 'diagnostics',
+    requiredBayType: 'general',
+    dueBy: 14.5,
+  },
+]
+
+// The scarce-skill jobs arrive late in the list so a naive arrival-order scheduler
+// can consume Andre's shorter shift before diagnostics and timing-belt work is placed.
+// Alignment work also competes for one rack and one specialist, creating a second bottleneck.
